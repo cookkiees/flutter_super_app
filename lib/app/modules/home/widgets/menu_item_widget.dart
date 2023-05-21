@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_super_app_1/app/modules/home/views/delivery/delivery_page.dart';
+import 'package:flutter_super_app_1/app/routes/app_routes.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
@@ -27,23 +29,31 @@ class MenuItemWidget extends GetView<HomeController> {
                 padding: const EdgeInsets.only(left: 16, top: 16),
                 child: Column(
                   children: [
-                    Stack(
-                      children: [
-                        Container(
-                          width: 80,
-                          height: 80,
-                          padding: const EdgeInsets.symmetric(horizontal: 12),
-                          child: SvgPicture.asset(
-                            MyStrings.url[index],
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      onTap: () {
+                        (index == 0 || index == 1)
+                            ? Get.toNamed(AppRoutes.delivery)
+                            : null;
+                      },
+                      child: Stack(
+                        children: [
+                          Container(
+                            width: 80,
+                            height: 80,
+                            padding: const EdgeInsets.symmetric(horizontal: 12),
+                            child: SvgPicture.asset(
+                              MyStrings.url[index],
+                            ),
                           ),
-                        ),
-                        if (showBanner)
-                          Positioned(
-                            right: 6,
-                            top: 6,
-                            child: banerDiscount(index),
-                          ),
-                      ],
+                          if (showBanner)
+                            Positioned(
+                              right: 6,
+                              top: 6,
+                              child: banerDiscount(index),
+                            ),
+                        ],
+                      ),
                     ),
                     Text(MyStrings.name[index])
                   ],

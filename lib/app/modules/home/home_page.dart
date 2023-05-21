@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
 import '../../theme/utils/my_colors.dart';
 import 'controller/home_controller.dart';
 import 'widgets/activity_user_widget.dart';

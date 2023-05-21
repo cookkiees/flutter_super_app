@@ -9,6 +9,7 @@ abstract class AppRoutes {
   static const main = '/main';
   static const home = '/home';
   static const search = '/home/search';
+  static const delivery = '/home/search/delivery';
   static const activity = '/activity';
   static const payment = '/payment';
   static const messages = '/messages';

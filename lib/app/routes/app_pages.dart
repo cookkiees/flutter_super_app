@@ -1,4 +1,3 @@
-import 'package:flutter_super_app_1/app/modules/home/views/search/search_page.dart';
 import 'package:get/get.dart';
 //  Import local
 import '../modules/account/account_page.dart';
@@ -12,6 +11,8 @@ import '../modules/authentication/signin/getstarted/verification_page.dart';
 import '../modules/authentication/signin/signin_with_phone_page.dart';
 import '../modules/home/controller/home_binding.dart';
 import '../modules/home/home_page.dart';
+import '../modules/home/views/delivery/delivery_page.dart';
+import '../modules/home/views/search/search_page.dart';
 import '../modules/main/controllers/main_binding.dart';
 import '../modules/main/main_page.dart';
 import '../modules/messages/controllers/messages_binding.dart';
@@ -64,6 +65,11 @@ abstract class AppPages {
       page: () => const SearchPage(),
       binding: HomeBinding(),
       transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name: AppRoutes.delivery,
+      page: () => const DeliveryPage(),
+      binding: HomeBinding(),
     ),
     GetPage(
       name: AppRoutes.activity,

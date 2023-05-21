@@ -1,6 +1,7 @@
 import 'package:flutter_super_app_1/app/data/services/api_service.dart';
 import 'package:get/get.dart';
 import '../../main/controllers/main_controller.dart';
+import '../views/delivery/delivery_controller.dart';
 import '../views/search/search_controller.dart';
 import 'home_controller.dart';
 import 'home_interactor.dart';
@@ -14,6 +15,7 @@ class HomeBinding implements Bindings {
     Get.lazyPut<HomeInteractor>(() => HomeInteractor());
     Get.lazyPut<HomeController>(() => HomeController());
     Get.lazyPut<SearchPageController>(() => SearchPageController());
+    Get.lazyPut<DeliveryController>(() => DeliveryController());
     Get.lazyPut<MainController>(() => MainController());
   }
 }
