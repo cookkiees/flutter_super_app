@@ -7,6 +7,7 @@ import 'controller/home_controller.dart';
 import 'widgets/home_activity_user_widget.dart';
 import '../../components/card_product_item_global_widget.dart';
 import 'widgets/home_gift_box_widget.dart';
+import 'widgets/home_grab_challenges_widget.dart';
 import 'widgets/home_menu_item_widget.dart';
 import 'widgets/home_appbar_widget.dart';
 
@@ -67,89 +68,142 @@ class HomePage extends GetView<HomeController> {
                     const SliverToBoxAdapter(
                       child: HomeGiftBoxWidget(),
                     ),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding:
-                            const EdgeInsets.only(left: 16, top: 16, right: 16),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "Complete your challenges now",
+                    const SliverToBoxAdapter(
+                      child: GrabChallengesWidget(),
+                    ),
+                    const SliverToBoxAdapter(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(left: 16, top: 24),
+                            child: Text(
+                              "People love food from",
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 16,
                               ),
                             ),
-                            const SizedBox(height: 16),
-                            Container(
-                              height: 120,
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(width: 0.1),
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(12.0),
-                                ),
-                              ),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    width: 100,
-                                    height: double.infinity,
-                                    alignment: Alignment.topCenter,
-                                    padding: const EdgeInsets.all(14),
-                                    child: CircleAvatar(
-                                      radius: 24,
-                                      backgroundColor: Colors.green[50],
-                                      child: const Icon(
-                                        Icons.card_giftcard,
-                                        size: 32,
-                                        color: Colors.green,
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Container(
-                                      height: double.infinity,
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 18),
-                                      child: const Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            "Win GrabGifts Food!",
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 14,
-                                            ),
-                                          ),
-                                          SizedBox(height: 12),
-                                          Text(
-                                            "Ends on 31 May 2023",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.w400,
-                                                fontSize: 12,
-                                                color: Colors.grey),
-                                          ),
-                                          SizedBox(height: 12),
-                                          Text(
-                                            "Accept this Challenge",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: 12,
-                                                color: Colors.blue),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                          ),
+                          CardProductItemGlobalWidget(),
+                        ],
+                      ),
+                    ),
+                    SliverToBoxAdapter(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Padding(
+                            padding:
+                                EdgeInsets.only(left: 16, top: 24, bottom: 16),
+                            child: Text(
+                              "Diskon makanan s.d. Rp150rb",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                          SizedBox(
+                            height: 200,
+                            width: double.infinity,
+                            child: ListView.builder(
+                              itemCount: 3,
+                              padding: const EdgeInsets.only(left: 16),
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (BuildContext context, int index) {
+                                return Padding(
+                                  padding: const EdgeInsets.only(right: 16),
+                                  child: SizedBox(
+                                    width: 200,
+                                    height: 200,
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          width: double.infinity,
+                                          height: 150,
+                                          padding: const EdgeInsets.all(16),
+                                          decoration: BoxDecoration(
+                                            color: Colors
+                                                .green[100 * (index + 1 % 8)],
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                          ),
+                                          child: Image.asset(
+                                              'assets/images/grab.png'),
+                                        ),
+                                        const Flexible(
+                                          child: Center(
+                                            child: Text(
+                                                "Pesan Ramean Pakai Group Order"),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    SliverToBoxAdapter(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Padding(
+                            padding:
+                                EdgeInsets.only(left: 16, top: 24, bottom: 16),
+                            child: Text(
+                              "Kirim pake Grab banyak diskonnya",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 230,
+                            width: double.infinity,
+                            child: ListView.builder(
+                              itemCount: 3,
+                              padding: const EdgeInsets.only(left: 16),
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (BuildContext context, int index) {
+                                return Padding(
+                                  padding: const EdgeInsets.only(right: 16),
+                                  child: SizedBox(
+                                    width: 200,
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          width: double.infinity,
+                                          height: 200,
+                                          padding: const EdgeInsets.all(16),
+                                          decoration: BoxDecoration(
+                                            color: Colors
+                                                .green[100 * (index + 1 % 8)],
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                          ),
+                                          child: Image.asset(
+                                              'assets/images/grab.png'),
+                                        ),
+                                        const Flexible(
+                                          child: Center(
+                                            child: Text(
+                                                "Coba GRATIS pake onkir flat"),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+                          )
+                        ],
                       ),
                     ),
                     const SliverToBoxAdapter(

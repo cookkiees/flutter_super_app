@@ -15,4 +15,5 @@ abstract class AppRoutes {
   static const payment = '/payment';
   static const messages = '/messages';
   static const account = '/account';
+  static const rewards = '/account/rewards';
 }

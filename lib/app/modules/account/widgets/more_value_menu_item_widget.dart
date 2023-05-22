@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_super_app_1/app/routes/app_routes.dart';
+import 'package:get/get.dart';
 
 class MoreValueMenuItemWidget extends StatelessWidget {
   const MoreValueMenuItemWidget({
@@ -19,7 +21,9 @@ class MoreValueMenuItemWidget extends StatelessWidget {
         return Column(
           children: [
             ListTile(
-              onTap: () {},
+              onTap: () {
+                (i == 0) ? Get.toNamed(AppRoutes.rewards) : null;
+              },
               dense: true,
               title: Text(
                 forMoreValue[i],

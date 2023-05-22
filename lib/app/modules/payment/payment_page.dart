@@ -81,12 +81,9 @@ class PaymentPage extends GetView<PaymentController> {
                               Radius.circular(12.0),
                             ),
                           ),
-                          child: Text(
-                            note[i],
-                            style: const TextStyle(
-                              color: MyColors.white,
-                              fontWeight: FontWeight.w700,
-                            ),
+                          child: Image.asset(
+                            'assets/images/grab.png',
+                            color: Colors.white,
                           ),
                         ),
                       );
