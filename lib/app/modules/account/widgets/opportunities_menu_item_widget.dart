@@ -22,7 +22,7 @@ class OpportunitiesMenuItemWidget extends StatelessWidget {
               title: Text(
                 forMoreValue[i],
                 style:
-                    const TextStyle(fontWeight: FontWeight.w300, fontSize: 16),
+                    const TextStyle(fontWeight: FontWeight.w300, fontSize: 14),
               ),
               trailing: const Icon(Icons.arrow_forward_ios, size: 18),
             ),

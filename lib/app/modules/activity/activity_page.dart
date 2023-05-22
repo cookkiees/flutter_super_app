@@ -11,20 +11,20 @@ class ActivityPage extends GetView<ActivityController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: MyColors.white,
       body: SafeArea(
         top: false,
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
-              backgroundColor: AppColors.white,
+              backgroundColor: MyColors.white,
               title: const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Activity',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: AppColors.black,
+                    color: MyColors.black,
                     fontSize: 24,
                   ),
                 ),
@@ -42,14 +42,13 @@ class ActivityPage extends GetView<ActivityController> {
                       Icon(
                         Icons.history,
                         size: 24.0,
-                        color: AppColors.black,
+                        color: MyColors.black,
                       ),
                       SizedBox(width: 8),
                       Text(
                         'History',
                         style: TextStyle(
-                            color: AppColors.black,
-                            fontWeight: FontWeight.w600),
+                            color: MyColors.black, fontWeight: FontWeight.w600),
                       )
                     ],
                   ),
@@ -75,7 +74,7 @@ class ActivityPage extends GetView<ActivityController> {
                     "When you use our services, you'll see them here.",
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
-                      color: AppColors.grey,
+                      color: MyColors.grey,
                     ),
                   ),
                 ],

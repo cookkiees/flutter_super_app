@@ -28,25 +28,28 @@ class AccountBanner extends StatelessWidget {
             color: Colors.blue[500],
           ),
           const SizedBox(width: 12),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                "Let's make sure you never lose access to your\nacccount.",
-                style: TextStyle(
-                  fontSize: 14.0,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Flexible(
+                  child: Text(
+                    "Let's make sure you never lose access to your account.",
+                    style:
+                        TextStyle(fontSize: 14.0, overflow: TextOverflow.clip),
+                  ),
                 ),
-              ),
-              Text(
-                "Set up recovery email",
-                style: TextStyle(
-                  fontSize: 14.0,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.blue[500],
+                Text(
+                  "Set up recovery email",
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.blue[500],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),

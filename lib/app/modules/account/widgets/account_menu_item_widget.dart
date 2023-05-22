@@ -28,7 +28,7 @@ class AccountMenuItemWidget extends StatelessWidget {
               title: Text(
                 forMoreValue[i],
                 style:
-                    const TextStyle(fontWeight: FontWeight.w300, fontSize: 16),
+                    const TextStyle(fontWeight: FontWeight.w300, fontSize: 14),
               ),
               trailing: (i == 0)
                   ? SizedBox(

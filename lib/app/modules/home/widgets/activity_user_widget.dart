@@ -47,7 +47,7 @@ class ActivityUserWidget extends StatelessWidget {
                               ? 'Invite friends'
                               : 'Points',
                       style:
-                          const TextStyle(color: AppColors.black, fontSize: 14),
+                          const TextStyle(color: MyColors.black, fontSize: 14),
                       children: <TextSpan>[
                         TextSpan(
                           text: (i == 0)

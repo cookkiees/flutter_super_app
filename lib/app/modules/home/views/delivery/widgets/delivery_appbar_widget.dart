@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../theme/utils/my_colors.dart';
+import '../../../controller/home_controller.dart';
 
-class DeliveryAppBarWidget extends StatelessWidget {
+class DeliveryAppBarWidget extends GetView<HomeController> {
   const DeliveryAppBarWidget({
     super.key,
   });
@@ -11,7 +12,7 @@ class DeliveryAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: AppColors.green,
+      backgroundColor: Colors.transparent,
       expandedHeight: 150,
       leading: IconButton(
         onPressed: () => Get.back(),
@@ -21,6 +22,19 @@ class DeliveryAppBarWidget extends StatelessWidget {
         ),
       ),
       title: const DeliveryTitleWidget(),
+      flexibleSpace: FlexibleSpaceBar(
+        background: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.greenAccent, Color(0xFF86D7FF)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              stops: [0.0, 1.0],
+              tileMode: TileMode.clamp,
+            ),
+          ),
+        ),
+      ),
       actions: [
         DeliveryIconButtonWidget(
           icon: Icons.favorite_border,
@@ -46,7 +60,13 @@ class DeliveryAppBarWidget extends StatelessWidget {
                     height: 50,
                     width: double.infinity,
                     decoration: const BoxDecoration(
-                      color: AppColors.green,
+                      gradient: LinearGradient(
+                        colors: [Colors.greenAccent, Color(0xFF86D7FF)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        stops: [0.0, 1.0],
+                        tileMode: TileMode.clamp,
+                      ),
                     ),
                   ),
                   Container(
@@ -72,25 +92,26 @@ class DeliveryAppBarWidget extends StatelessWidget {
                         ),
                       ],
                     ),
-                    child: TextFormField(
-                      cursorColor: AppColors.green,
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white,
-                        hintText: 'Kamu lagi cari apa?',
-                        prefixIcon: const Icon(Icons.search,
-                            color: Colors.grey, size: 32),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.circular(12)),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.circular(12)),
-                        disabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.circular(12)),
-                      ),
-                    ),
+                    child: Obx(() => TextFormField(
+                          cursorColor: MyColors.green,
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            hintText: controller.text.value,
+                            hintStyle: const TextStyle(color: Colors.grey),
+                            prefixIcon: const Icon(Icons.search,
+                                color: Colors.grey, size: 32),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(12)),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(12)),
+                            disabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(12)),
+                          ),
+                        )),
                   ),
                 ),
               ),
@@ -124,16 +145,20 @@ class DeliveryTitleWidget extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  'Velo city - Isekai',
-                  style: TextStyle(
-                    fontSize: 16,
+                Flexible(
+                  child: Text(
+                    'Jalan Pasar Baru - Banda Buat',
+                    style: TextStyle(
+                      fontSize: 15,
+                    ),
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                Icon(
-                  Icons.arrow_drop_down,
-                  size: 24.0,
+                SizedBox(
+                  child: Icon(
+                    Icons.arrow_drop_down,
+                    size: 24.0,
+                  ),
                 ),
               ],
             ),

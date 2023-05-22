@@ -21,7 +21,7 @@ class VerificationPage extends GetView<AuthenticationController> {
           onPressed: () => Get.back(),
           icon: const Icon(
             Icons.arrow_back_ios_new,
-            color: AppColors.black,
+            color: MyColors.black,
           ),
         ),
       ),
@@ -41,7 +41,7 @@ class VerificationPage extends GetView<AuthenticationController> {
                     RichText(
                       text: const TextSpan(
                         text: 'Enter the 6-digit code send to ',
-                        style: TextStyle(color: AppColors.black),
+                        style: TextStyle(color: MyColors.black),
                         children: <TextSpan>[
                           TextSpan(
                               text: '+ 62 812 123 4567',
@@ -59,7 +59,7 @@ class VerificationPage extends GetView<AuthenticationController> {
                       onChanged: (_) => controller.checkInputValue(),
                       controller: controller.verify,
                       keyboardType: TextInputType.number,
-                      cursorColor: AppColors.green,
+                      cursorColor: MyColors.green,
                       inputFormatters: <TextInputFormatter>[
                         FilteringTextInputFormatter.digitsOnly,
                       ],
@@ -67,20 +67,20 @@ class VerificationPage extends GetView<AuthenticationController> {
                           letterSpacing: 5,
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
-                          color: AppColors.black),
+                          color: MyColors.black),
                       decoration: InputDecoration(
                         suffixIcon: IconButton(
                           splashRadius: 24,
                           icon: const Icon(Icons.clear, size: 28),
-                          color: AppColors.grey,
+                          color: MyColors.grey,
                           onPressed: () => controller.verify.text = '',
                         ),
-                        suffixIconColor: AppColors.grey,
+                        suffixIconColor: MyColors.grey,
                         hintText: '00000',
                         hintStyle: const TextStyle(
                           fontSize: 32,
                           letterSpacing: 5,
-                          color: AppColors.grey,
+                          color: MyColors.grey,
                         ),
                         focusedBorder: InputBorder.none,
                         enabledBorder: InputBorder.none,
@@ -100,7 +100,7 @@ class VerificationPage extends GetView<AuthenticationController> {
                     text: const TextSpan(
                       text: 'Get new code ',
                       style: TextStyle(
-                          color: AppColors.grey, fontWeight: FontWeight.bold),
+                          color: MyColors.grey, fontWeight: FontWeight.bold),
                       children: <TextSpan>[
                         TextSpan(
                           text: 'or',

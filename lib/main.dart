@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_super_app_1/app/modules/main/main_page.dart';
 import 'package:get/get.dart';
 import 'app/data/services/api_binding.dart';
 import 'app/modules/main/controllers/main_controller.dart';
-import 'app/modules/main/main_page.dart';
 import 'app/routes/app_pages.dart';
 import 'app/routes/app_routes.dart';
 

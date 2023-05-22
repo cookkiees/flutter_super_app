@@ -12,14 +12,14 @@ class MainPage extends GetView<MainController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: MyColors.white,
       body: Obx(
         () => IndexedStack(
           index: controller.pageIndex.value,
           children: [
             (controller.isLoading.value)
                 ? const Center(
-                    child: CupertinoActivityIndicator(color: AppColors.green))
+                    child: CupertinoActivityIndicator(color: MyColors.green))
                 : GetRouterOutlet(
                     anchorRoute: AppRoutes.home,
                     initialRoute: AppRoutes.home,
@@ -31,7 +31,7 @@ class MainPage extends GetView<MainController> {
                   ),
             (controller.isLoading.value)
                 ? const Center(
-                    child: CupertinoActivityIndicator(color: AppColors.green))
+                    child: CupertinoActivityIndicator(color: MyColors.green))
                 : GetRouterOutlet(
                     anchorRoute: AppRoutes.activity,
                     initialRoute: AppRoutes.activity,
@@ -43,7 +43,7 @@ class MainPage extends GetView<MainController> {
                   ),
             (controller.isLoading.value)
                 ? const Center(
-                    child: CupertinoActivityIndicator(color: AppColors.green))
+                    child: CupertinoActivityIndicator(color: MyColors.green))
                 : GetRouterOutlet(
                     anchorRoute: AppRoutes.payment,
                     initialRoute: AppRoutes.payment,
@@ -55,7 +55,7 @@ class MainPage extends GetView<MainController> {
                   ),
             (controller.isLoading.value)
                 ? const Center(
-                    child: CupertinoActivityIndicator(color: AppColors.green))
+                    child: CupertinoActivityIndicator(color: MyColors.green))
                 : GetRouterOutlet(
                     anchorRoute: AppRoutes.messages,
                     initialRoute: AppRoutes.messages,
@@ -67,7 +67,7 @@ class MainPage extends GetView<MainController> {
                   ),
             (controller.isLoading.value)
                 ? const Center(
-                    child: CupertinoActivityIndicator(color: AppColors.green))
+                    child: CupertinoActivityIndicator(color: MyColors.green))
                 : GetRouterOutlet(
                     anchorRoute: AppRoutes.account,
                     initialRoute: AppRoutes.account,
@@ -85,49 +85,53 @@ class MainPage extends GetView<MainController> {
           top: false,
           child: Theme(
             data: ThemeData(splashColor: Colors.transparent),
-            child: BottomNavigationBar(
-              currentIndex: controller.pageIndex.value,
-              onTap: controller.onTabSelected,
-              showSelectedLabels: true,
-              showUnselectedLabels: true,
-              type: BottomNavigationBarType.fixed,
-              backgroundColor: AppColors.white,
-              elevation: 0.1,
-              iconSize: 26,
-              unselectedFontSize: 14,
-              selectedFontSize: 15,
-              unselectedLabelStyle:
-                  const TextStyle(fontWeight: FontWeight.w300),
-              selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w500),
-              unselectedItemColor: Colors.grey[500],
-              selectedItemColor: AppColors.green,
-              items: const [
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.explore_outlined),
-                  activeIcon: Icon(Icons.explore),
-                  label: 'Home',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.receipt_long_outlined),
-                  activeIcon: Icon(Icons.receipt_long),
-                  label: 'Acticity',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.monetization_on_outlined),
-                  activeIcon: Icon(Icons.monetization_on),
-                  label: 'Payment',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.chat_outlined),
-                  activeIcon: Icon(Icons.chat),
-                  label: 'Messages',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.account_circle_outlined),
-                  activeIcon: Icon(Icons.account_circle),
-                  label: 'Account',
-                ),
-              ],
+            child: Visibility(
+              visible: controller.isBottomNavBarVisible.value,
+              child: BottomNavigationBar(
+                currentIndex: controller.pageIndex.value,
+                onTap: controller.onTabSelected,
+                showSelectedLabels: true,
+                showUnselectedLabels: true,
+                type: BottomNavigationBarType.fixed,
+                backgroundColor: MyColors.white,
+                elevation: 0.1,
+                iconSize: 26,
+                unselectedFontSize: 14,
+                selectedFontSize: 15,
+                unselectedLabelStyle:
+                    const TextStyle(fontWeight: FontWeight.w300),
+                selectedLabelStyle:
+                    const TextStyle(fontWeight: FontWeight.w500),
+                unselectedItemColor: Colors.grey[500],
+                selectedItemColor: MyColors.green,
+                items: const [
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.explore_outlined),
+                    activeIcon: Icon(Icons.explore),
+                    label: 'Home',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.receipt_long_outlined),
+                    activeIcon: Icon(Icons.receipt_long),
+                    label: 'Acticity',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.monetization_on_outlined),
+                    activeIcon: Icon(Icons.monetization_on),
+                    label: 'Payment',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.chat_outlined),
+                    activeIcon: Icon(Icons.chat),
+                    label: 'Messages',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.account_circle_outlined),
+                    activeIcon: Icon(Icons.account_circle),
+                    label: 'Account',
+                  ),
+                ],
+              ),
             ),
           ),
         ),

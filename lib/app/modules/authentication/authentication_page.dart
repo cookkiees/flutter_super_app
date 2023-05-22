@@ -17,7 +17,7 @@ class AuthenticationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.green,
+      backgroundColor: MyColors.green,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -28,7 +28,7 @@ class AuthenticationPage extends StatelessWidget {
       ),
       body: SafeArea(
         child: Container(
-          color: AppColors.green,
+          color: MyColors.green,
           width: double.infinity,
           padding: const EdgeInsets.only(top: 48, left: 16, right: 16),
           child: Column(
@@ -39,11 +39,11 @@ class AuthenticationPage extends StatelessWidget {
                   Text(
                     MyStrings.title,
                     style: GoogleFonts.zenTokyoZoo(
-                        color: AppColors.white, fontSize: 90),
+                        color: MyColors.white, fontSize: 90),
                   ),
                   const Text(
                     "Your everyday evething App",
-                    style: TextStyle(color: AppColors.white),
+                    style: TextStyle(color: MyColors.white),
                   ),
                 ],
               ),
@@ -78,7 +78,7 @@ class AuthenticationPage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Divider(
-                          color: AppColors.white,
+                          color: MyColors.white,
                           thickness: 1.5,
                           endIndent: 16,
                           indent: 8,
@@ -86,11 +86,11 @@ class AuthenticationPage extends StatelessWidget {
                       ),
                       Text(
                         'or',
-                        style: TextStyle(color: AppColors.white),
+                        style: TextStyle(color: MyColors.white),
                       ),
                       Expanded(
                         child: Divider(
-                          color: AppColors.white,
+                          color: MyColors.white,
                           thickness: 1.5,
                           indent: 16,
                           endIndent: 8,

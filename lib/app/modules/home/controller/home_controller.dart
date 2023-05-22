@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -15,6 +17,7 @@ class HomeController extends GetxController
   @override
   void onInit() {
     super.onInit();
+    changeText();
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(minutes: 1),
@@ -65,6 +68,30 @@ class HomeController extends GetxController
     refreshController.loadComplete();
     // Load more data selesai
     // ... (isikan logika load more data Anda di sini)
+  }
+
+  RxString text = "".obs;
+  List<String> sentences = [
+    "Mau ngapain hari ini ?",
+    "Kamu mau makan ?",
+    "Atau butuh sesuatu ?",
+    "Semua nya ada disini !!"
+  ];
+  int currentIndex = 0;
+
+  void changeText() async {
+    String newText = sentences[currentIndex];
+    for (int i = 0; i < newText.length; i++) {
+      await Future.delayed(const Duration(milliseconds: 200));
+      text.value = newText.substring(0, i + 1);
+    }
+
+    currentIndex++;
+    if (currentIndex >= sentences.length) {
+      currentIndex = 0;
+    }
+    await Future.delayed(const Duration(seconds: 3));
+    changeText();
   }
 
   @override

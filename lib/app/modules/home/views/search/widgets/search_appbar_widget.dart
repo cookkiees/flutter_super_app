@@ -41,7 +41,7 @@ class SearchAppBarWidget extends StatelessWidget {
                 color: Colors.red,
               ),
               Text(
-                "Velo city",
+                "Jalan Pasar Baru - Bandar Buat",
                 style: TextStyle(fontSize: 14, color: Colors.black),
               ),
             ],
@@ -55,14 +55,14 @@ class SearchAppBarWidget extends StatelessWidget {
           child: SizedBox(
             height: 50,
             child: TextField(
-              cursorColor: AppColors.green,
+              cursorColor: MyColors.green,
               decoration: InputDecoration(
                 filled: true,
                 isDense: true,
                 fillColor: Colors.grey[100],
                 hintText: 'Search the ${MyStrings.title} app',
                 hintStyle: const TextStyle(color: Colors.grey),
-                prefixIconColor: AppColors.grey,
+                prefixIconColor: MyColors.grey,
                 prefixIcon: const Icon(Icons.search, size: 24),
                 focusedBorder: const OutlineInputBorder(
                   borderSide: BorderSide.none,

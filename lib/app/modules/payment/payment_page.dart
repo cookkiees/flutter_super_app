@@ -84,7 +84,7 @@ class PaymentPage extends GetView<PaymentController> {
                           child: Text(
                             title[i],
                             style: const TextStyle(
-                              color: AppColors.white,
+                              color: MyColors.white,
                               fontWeight: FontWeight.w700,
                             ),
                           ),

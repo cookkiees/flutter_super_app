@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MainController extends GetxController {
@@ -13,5 +14,28 @@ class MainController extends GetxController {
       pageIndex.value = index;
       isLoading.value = false;
     });
+  }
+
+  RxBool isBottomNavBarVisible = true.obs;
+
+  ScrollController scroll = ScrollController();
+
+  @override
+  void onInit() {
+    scroll = ScrollController();
+    scroll.addListener(() {
+      double scrollPosition = scroll.position.pixels;
+      double maxScrollExtent = scroll.position.maxScrollExtent;
+      onScroll(scrollPosition, maxScrollExtent);
+    });
+    super.onInit();
+  }
+
+  void onScroll(double scrollPosition, double maxScrollExtent) {
+    if (scrollPosition >= maxScrollExtent) {
+      isBottomNavBarVisible.value = false;
+    } else {
+      isBottomNavBarVisible.value = true;
+    }
   }
 }

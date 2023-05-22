@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_super_app_1/app/modules/home/views/delivery/delivery_page.dart';
 import 'package:flutter_super_app_1/app/routes/app_routes.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -83,7 +82,7 @@ class MenuItemWidget extends GetView<HomeController> {
                       width: 20,
                       height: 6,
                       decoration: BoxDecoration(
-                        color: AppColors.darkGreen,
+                        color: MyColors.darkGreen,
                         borderRadius: BorderRadius.circular(3),
                       ),
                       margin: EdgeInsets.only(
@@ -109,13 +108,13 @@ Widget banerDiscount(int index) {
     decoration: BoxDecoration(
       color: Colors.red,
       borderRadius: BorderRadius.circular(20),
-      border: Border.all(color: AppColors.white, width: 2),
+      border: Border.all(color: MyColors.white, width: 2),
     ),
     child: const Center(
       child: Text(
         'PROMO',
         style: TextStyle(
-          color: AppColors.white,
+          color: MyColors.white,
           fontSize: 8,
           fontWeight: FontWeight.w800,
         ),

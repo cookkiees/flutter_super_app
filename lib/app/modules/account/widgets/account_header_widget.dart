@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../components/icon_subscription_global_widget.dart';
 import '../../../theme/utils/my_colors.dart';
 
 class AccountHeaderWidget extends StatelessWidget {
@@ -19,7 +21,7 @@ class AccountHeaderWidget extends StatelessWidget {
             children: [
               const Icon(
                 Icons.account_circle_rounded,
-                color: AppColors.green,
+                color: MyColors.green,
                 size: 100,
               ),
               Positioned(
@@ -30,7 +32,7 @@ class AccountHeaderWidget extends StatelessWidget {
                   width: 26,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: AppColors.white,
+                    color: MyColors.white,
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.withOpacity(0.3),
@@ -69,18 +71,18 @@ class AccountHeaderWidget extends StatelessWidget {
                   elevation: 0,
                   backgroundColor: Colors.transparent,
                 ),
-                icon: const Icon(
-                  Icons.insights,
-                  color: AppColors.green,
-                ),
+                icon: const IconSubscritionWidget(),
                 label: Row(
                   children: [
                     Text(
                       '  Subscribe ',
                       style: TextStyle(color: Colors.grey[700]),
                     ),
-                    Icon(Icons.arrow_forward_ios,
-                        color: Colors.grey[700], size: 12),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.grey[700],
+                      size: 12,
+                    ),
                   ],
                 ),
               )

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_super_app_1/app/modules/home/controller/home_controller.dart';
 import 'package:flutter_super_app_1/app/routes/app_routes.dart';
 import 'package:get/get.dart';
 
 import '../../../theme/utils/my_colors.dart';
-import '../../../theme/utils/my_strings.dart';
 
-class SliverAppBarWidget extends StatelessWidget {
+class SliverAppBarWidget extends GetView<HomeController> {
   const SliverAppBarWidget({
     super.key,
     required this.child,
@@ -15,11 +15,11 @@ class SliverAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: AppColors.green,
-      foregroundColor: AppColors.green,
+      backgroundColor: MyColors.green,
+      foregroundColor: MyColors.green,
       flexibleSpace: Align(
         alignment: Alignment.bottomCenter,
-        child: Container(color: AppColors.white, height: 26),
+        child: Container(color: MyColors.white, height: 26),
       ),
       bottom: PreferredSize(
         preferredSize: const Size(double.infinity, 20),
@@ -44,52 +44,62 @@ class SliverAppBarWidget extends StatelessWidget {
                     ],
                   ),
                   child: child),
-              Container(
-                width: 330,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.3),
-                      spreadRadius: 2,
-                      blurRadius: 6,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
-                ),
-                child: Stack(
-                  children: [
-                    TextFormField(
-                      onTap: () => Get.toNamed(AppRoutes.search),
-                      cursorColor: AppColors.green,
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.circular(12)),
-                        hintText: "Search the ${MyStrings.title} app",
-                        hintStyle: const TextStyle(fontWeight: FontWeight.w300),
-                        prefixIconColor: AppColors.grey[700],
-                        suffixIconColor: AppColors.grey[700],
-                        prefixIcon: const Icon(Icons.search, size: 28),
-                        suffixIcon: const Padding(
-                          padding: EdgeInsets.only(right: 4),
-                          child: Icon(Icons.favorite_border, size: 28),
+              const SizedBox(width: 16),
+              Flexible(
+                child: InkWell(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.search);
+                  },
+                  child: Container(
+                    height: 56,
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.3),
+                          spreadRadius: 2,
+                          blurRadius: 6,
+                          offset: const Offset(0, 2),
                         ),
-                      ),
+                      ],
                     ),
-                    Positioned(
-                      right: 52,
-                      child: Container(
-                        width: 1,
-                        height: 58,
-                        color: Colors.grey[400],
-                      ),
-                    )
-                  ],
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.search,
+                              size: 24.0,
+                              color: Colors.grey[800],
+                            ),
+                            const SizedBox(width: 12),
+                            Obx(
+                              () => Text(
+                                controller.text.value,
+                                style: const TextStyle(color: Colors.grey),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            const VerticalDivider(thickness: 1),
+                            Icon(
+                              Icons.favorite_border,
+                              size: 24.0,
+                              color: Colors.grey[800],
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
                 ),
-              )
+              ),
             ],
           ),
         ),

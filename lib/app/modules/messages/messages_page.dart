@@ -11,17 +11,17 @@ class MessagesPage extends GetView<MessagesController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: MyColors.white,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: AppColors.white,
+        backgroundColor: MyColors.white,
         title: const Align(
           alignment: Alignment.centerLeft,
           child: Text(
             'Messages',
             style: TextStyle(
               fontSize: 24,
-              color: AppColors.black,
+              color: MyColors.black,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -59,7 +59,7 @@ class MessagesPage extends GetView<MessagesController> {
                         children: <TextSpan>[
                           TextSpan(
                             text: ' Help\nCentre',
-                            style: TextStyle(color: AppColors.green),
+                            style: TextStyle(color: MyColors.green),
                           )
                         ]),
                   )
@@ -85,7 +85,7 @@ class MessagesPage extends GetView<MessagesController> {
                             text:
                                 ' \n\nWatch this space for offers,updates,and more',
                             style: TextStyle(
-                              color: AppColors.grey,
+                              color: MyColors.grey,
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
                             ),

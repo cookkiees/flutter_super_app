@@ -45,7 +45,7 @@ class CardItemWidget extends StatelessWidget {
                           "Discount is up to Rp.25k, let's order now",
                           style: TextStyle(
                             fontSize: 14,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ],

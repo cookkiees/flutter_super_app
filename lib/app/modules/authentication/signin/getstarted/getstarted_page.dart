@@ -21,13 +21,13 @@ class GetStartedPage extends GetView<AuthenticationController> {
         backgroundColor: Colors.transparent,
         title: const Text(
           'Get Started',
-          style: TextStyle(color: AppColors.black),
+          style: TextStyle(color: MyColors.black),
         ),
         leading: IconButton(
           onPressed: () => Get.back(),
           icon: const Icon(
             Icons.arrow_back_ios_new,
-            color: AppColors.black,
+            color: MyColors.black,
           ),
         ),
       ),
@@ -48,11 +48,11 @@ class GetStartedPage extends GetView<AuthenticationController> {
                         focusNode: controller.focusAddName,
                         controller: controller.inputName,
                         keyboardType: TextInputType.name,
-                        cursorColor: AppColors.green,
+                        cursorColor: MyColors.green,
                         onChanged: (value) => controller.validateInputName(),
                         decoration: InputDecoration(
                           suffixIcon: const Icon(Icons.clear, size: 24),
-                          suffixIconColor: AppColors.grey,
+                          suffixIconColor: MyColors.grey,
                           isDense: false,
                           hintText: 'Enter your name',
                           focusedBorder: UnderlineInputBorder(
@@ -81,7 +81,7 @@ class GetStartedPage extends GetView<AuthenticationController> {
                           controller.isTextFieldFilled.value
                               ? null
                               : Colors.green[100],
-                      backgroundColor: AppColors.green,
+                      backgroundColor: MyColors.green,
                       minimumSize: const Size(double.infinity, 48),
                     ),
                   ),

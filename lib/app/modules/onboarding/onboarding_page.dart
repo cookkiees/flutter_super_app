@@ -17,13 +17,13 @@ class OnBoardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: MyColors.white,
       body: SafeArea(
         top: false,
         child: SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.only(top: 100),
-            color: AppColors.green,
+            color: MyColors.green,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -32,7 +32,7 @@ class OnBoardingPage extends StatelessWidget {
                     Text(
                       MyStrings.title,
                       style: GoogleFonts.zenTokyoZoo(
-                        color: AppColors.white,
+                        color: MyColors.white,
                         fontSize: 100,
                       ),
                     ),
@@ -40,7 +40,7 @@ class OnBoardingPage extends StatelessWidget {
                 ),
                 const Text(
                   "Your everyday evething App",
-                  style: TextStyle(color: AppColors.white),
+                  style: TextStyle(color: MyColors.white),
                 ),
                 Image.asset('assets/images/delivery.png'),
                 const SizedBox(height: 48),
@@ -51,7 +51,7 @@ class OnBoardingPage extends StatelessWidget {
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 16, vertical: 16),
-                    decoration: const BoxDecoration(color: AppColors.white),
+                    decoration: const BoxDecoration(color: MyColors.white),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -62,7 +62,7 @@ class OnBoardingPage extends StatelessWidget {
                           radius: 25,
                           elevation: 0,
                           minimumSize: const Size(double.infinity, 48),
-                          backgroundColor: AppColors.green,
+                          backgroundColor: MyColors.green,
                         ),
                         const SizedBox(height: 16),
                         ButtonGlobalWidget(

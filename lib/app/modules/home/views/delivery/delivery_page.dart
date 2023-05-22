@@ -9,9 +9,9 @@ class DeliveryPage extends GetView<DeliveryController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: CustomScrollView(
-        slivers: const [
+        slivers: [
           DeliveryAppBarWidget(),
         ],
       ),

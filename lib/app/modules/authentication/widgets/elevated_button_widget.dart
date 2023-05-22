@@ -9,7 +9,7 @@ class ElevatedButtonIconWidget extends StatelessWidget {
     required this.icon,
     required this.label,
     this.backgroundColor = Colors.white,
-    this.labelColor = AppColors.black,
+    this.labelColor = MyColors.black,
     this.foregroundColor,
     this.disabledBackgroundColor,
   });

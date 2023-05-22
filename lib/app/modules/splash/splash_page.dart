@@ -16,9 +16,9 @@ class SplashPage extends StatelessWidget {
       Get.offNamed(AppRoutes.onBoarding);
     });
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: MyColors.white,
       body: Container(
-        color: AppColors.green,
+        color: MyColors.green,
         width: double.infinity,
         padding: const EdgeInsets.only(top: 100),
         child: Column(
@@ -26,13 +26,13 @@ class SplashPage extends StatelessWidget {
             Text(
               MyStrings.title,
               style: GoogleFonts.zenTokyoZoo(
-                color: AppColors.white,
+                color: MyColors.white,
                 fontSize: 100,
               ),
             ),
             const Text(
               "Your everyday evething App",
-              style: TextStyle(color: AppColors.white),
+              style: TextStyle(color: MyColors.white),
             ),
           ],
         ),

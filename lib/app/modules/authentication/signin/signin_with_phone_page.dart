@@ -22,13 +22,13 @@ class SignInWithPhonePage extends GetView<AuthenticationController> {
         backgroundColor: Colors.transparent,
         title: const Text(
           'Get Started',
-          style: TextStyle(color: AppColors.black),
+          style: TextStyle(color: MyColors.black),
         ),
         leading: IconButton(
           onPressed: () => Get.back(),
           icon: const Icon(
             Icons.arrow_back_ios_new,
-            color: AppColors.black,
+            color: MyColors.black,
           ),
         ),
       ),
@@ -64,7 +64,7 @@ class SignInWithPhonePage extends GetView<AuthenticationController> {
                           ),
                         ),
                       ),
-                      cursorColor: AppColors.green,
+                      cursorColor: MyColors.green,
                       countrySelectorScrollControlled: true,
                       initialValue: PhoneNumber(dialCode: '+62', isoCode: 'ID'),
                       onInputChanged: (_) => controller.validatePhoneNumber(),
@@ -102,12 +102,12 @@ class SignInWithPhonePage extends GetView<AuthenticationController> {
                           child: SvgPicture.asset('assets/icons/whatsapp.svg'),
                         ),
                         label: 'Whatsapp',
-                        labelColor: AppColors.white,
+                        labelColor: MyColors.white,
                         disabledBackgroundColor:
                             controller.isTextFieldFilled.value
                                 ? null
                                 : Colors.green[100],
-                        backgroundColor: AppColors.green,
+                        backgroundColor: MyColors.green,
                       )),
                   const SizedBox(height: 16),
                   Obx(

@@ -15,7 +15,7 @@ class AddPaymentCardWidget extends StatelessWidget {
         height: 380,
         width: double.infinity,
         decoration: const BoxDecoration(
-          color: AppColors.white,
+          color: MyColors.white,
           border: BorderDirectional(
             top: BorderSide(width: 0.2),
           ),
@@ -29,7 +29,7 @@ class AddPaymentCardWidget extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: AppColors.green,
+                color: MyColors.green,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: const Row(
@@ -69,12 +69,12 @@ class AddPaymentCardWidget extends StatelessWidget {
                 ElevatedButton.icon(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.white,
+                    backgroundColor: MyColors.white,
                   ),
                   icon: const Icon(
                     Icons.account_balance_wallet,
                     size: 24.0,
-                    color: AppColors.green,
+                    color: MyColors.green,
                   ),
                   label: const Text(
                     'Top up',
@@ -87,12 +87,12 @@ class AddPaymentCardWidget extends StatelessWidget {
                 ElevatedButton.icon(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.white,
+                    backgroundColor: MyColors.white,
                   ),
                   icon: const Icon(
                     Icons.qr_code_2_outlined,
                     size: 24.0,
-                    color: AppColors.green,
+                    color: MyColors.green,
                   ),
                   label: const Text(
                     'Scan to pay',
