@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_super_app_1/app/theme/utils/my_colors.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 

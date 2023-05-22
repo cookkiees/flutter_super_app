@@ -1,4 +1,4 @@
-import 'package:flutter_super_app_1/app/modules/account/views/formorevalue/reward/rewards_page.dart';
+import 'package:flutter_super_app_1/app/modules/account/views/formorevalue/rewards/rewards_page.dart';
 import 'package:flutter_super_app_1/app/modules/home/views/transport/transport_page.dart';
 import 'package:get/get.dart';
 //  Import local
