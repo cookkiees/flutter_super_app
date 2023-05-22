@@ -68,7 +68,7 @@ class TransportAppBarWidget extends GetView<HomeController> {
               ),
             ),
             icon: const Icon(
-              Icons.map,
+              Icons.map_outlined,
               color: Colors.black,
             ),
             label: const Text(
@@ -118,39 +118,37 @@ class TransportAppBarWidget extends GetView<HomeController> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Container(
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.3),
-                          spreadRadius: 2,
-                          blurRadius: 6,
-                          offset: const Offset(0, 2),
-                        ),
-                      ],
-                    ),
-                    child: Obx(() => TextFormField(
-                          cursorColor: MyColors.green,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            hintText: 'Where to?',
-                            hintStyle: const TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w600),
-                            prefixIcon: const Icon(Icons.location_on,
-                                color: Colors.red, size: 28),
-                            focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide.none,
-                                borderRadius: BorderRadius.circular(12)),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide.none,
-                                borderRadius: BorderRadius.circular(12)),
-                            disabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide.none,
-                                borderRadius: BorderRadius.circular(12)),
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.3),
+                            spreadRadius: 2,
+                            blurRadius: 6,
+                            offset: const Offset(0, 2),
                           ),
-                        )),
-                  ),
+                        ],
+                      ),
+                      child: TextFormField(
+                        cursorColor: MyColors.green,
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white,
+                          hintText: 'Where to?',
+                          hintStyle: const TextStyle(
+                              color: Colors.black, fontWeight: FontWeight.w600),
+                          prefixIcon: const Icon(Icons.location_on,
+                              color: Colors.red, size: 28),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.circular(12)),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.circular(12)),
+                          disabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.circular(12)),
+                        ),
+                      )),
                 ),
               ),
             ],
