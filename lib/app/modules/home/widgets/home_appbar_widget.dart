@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 
 import '../../../theme/utils/my_colors.dart';
 
-class SliverAppBarWidget extends GetView<HomeController> {
-  const SliverAppBarWidget({
+class HomeAppBarWidget extends GetView<HomeController> {
+  const HomeAppBarWidget({
     super.key,
     required this.child,
   });

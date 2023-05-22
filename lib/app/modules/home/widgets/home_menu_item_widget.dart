@@ -7,8 +7,8 @@ import '../../../theme/utils/my_colors.dart';
 import '../../../theme/utils/my_strings.dart';
 import '../controller/home_controller.dart';
 
-class MenuItemWidget extends GetView<HomeController> {
-  const MenuItemWidget({
+class HomeMenuItemWidget extends GetView<HomeController> {
+  const HomeMenuItemWidget({
     super.key,
   });
   @override

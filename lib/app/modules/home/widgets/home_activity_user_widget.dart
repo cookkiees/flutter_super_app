@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 import '../../../theme/utils/my_colors.dart';
 import '../../main/controllers/main_controller.dart';
 
-class ActivityUserWidget extends StatelessWidget {
-  const ActivityUserWidget({
+class HomeActivityUserWidget extends StatelessWidget {
+  const HomeActivityUserWidget({
     super.key,
   });
 

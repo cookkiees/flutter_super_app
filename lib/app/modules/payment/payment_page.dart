@@ -13,7 +13,7 @@ class PaymentPage extends GetView<PaymentController> {
 
   @override
   Widget build(BuildContext context) {
-    var title = [
+    var note = [
       'Top up pulsa and PLN token',
       'Play on when you top up games',
       'Pay your bills anywhere',
@@ -65,7 +65,7 @@ class PaymentPage extends GetView<PaymentController> {
                 SizedBox(
                   height: 150.0,
                   child: ListView.builder(
-                    itemCount: title.length,
+                    itemCount: note.length,
                     scrollDirection: Axis.horizontal,
                     padding: const EdgeInsets.only(right: 16),
                     itemBuilder: (ctx, i) {
@@ -82,7 +82,7 @@ class PaymentPage extends GetView<PaymentController> {
                             ),
                           ),
                           child: Text(
-                            title[i],
+                            note[i],
                             style: const TextStyle(
                               color: MyColors.white,
                               fontWeight: FontWeight.w700,

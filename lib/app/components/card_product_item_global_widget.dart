@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CardProductItemWidget extends StatelessWidget {
-  const CardProductItemWidget({
+class CardProductItemGlobalWidget extends StatelessWidget {
+  const CardProductItemGlobalWidget({
     super.key,
   });
 

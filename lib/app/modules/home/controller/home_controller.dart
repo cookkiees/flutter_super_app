@@ -3,12 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'home_interactor.dart';
 
 class HomeController extends GetxController
     with GetSingleTickerProviderStateMixin {
-  HomeInteractor homeInteractor = Get.find<HomeInteractor>();
-
   // Menu item progres indicator animation
   var scrollController = ScrollController();
   var indicatorPosition = 0.0.obs;

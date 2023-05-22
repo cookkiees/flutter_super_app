@@ -4,12 +4,11 @@ import 'package:get/get.dart';
 import '../../theme/utils/my_colors.dart';
 import '../main/controllers/main_controller.dart';
 import 'controller/home_controller.dart';
-import 'widgets/activity_user_widget.dart';
-import 'widgets/card_product_item_widget.dart';
-import 'widgets/card_promo_item_widget.dart';
+import 'widgets/home_activity_user_widget.dart';
+import '../../components/card_product_item_global_widget.dart';
 import 'widgets/home_gift_box_widget.dart';
-import 'widgets/menu_item_widget.dart';
-import 'widgets/sliver_appbar_widget.dart';
+import 'widgets/home_menu_item_widget.dart';
+import 'widgets/home_appbar_widget.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({super.key});
@@ -19,7 +18,7 @@ class HomePage extends GetView<HomeController> {
     MainController mainController = Get.find<MainController>();
     return Obx(
       () => Container(
-        color: mainController.isBottomNavBarVisible.value
+        color: mainController.isScrollVisible.value
             ? MyColors.green
             : MyColors.white,
         child: SafeArea(
@@ -32,7 +31,7 @@ class HomePage extends GetView<HomeController> {
                 child: CustomScrollView(
                   controller: mainController.scroll,
                   slivers: [
-                    SliverAppBarWidget(
+                    HomeAppBarWidget(
                         child: Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: SvgPicture.asset(
@@ -42,10 +41,10 @@ class HomePage extends GetView<HomeController> {
                       ),
                     )),
                     const SliverToBoxAdapter(
-                      child: MenuItemWidget(),
+                      child: HomeMenuItemWidget(),
                     ),
                     const SliverToBoxAdapter(
-                      child: ActivityUserWidget(),
+                      child: HomeActivityUserWidget(),
                     ),
                     const SliverToBoxAdapter(
                       child: Column(
@@ -61,18 +60,7 @@ class HomePage extends GetView<HomeController> {
                               ),
                             ),
                           ),
-                          CardProductItemWidget(),
-                          Padding(
-                            padding: EdgeInsets.only(left: 16, top: 16),
-                            child: Text(
-                              "Promo special for you",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          CardItemWidget()
+                          CardProductItemGlobalWidget(),
                         ],
                       ),
                     ),
@@ -95,7 +83,7 @@ class HomePage extends GetView<HomeController> {
                             ),
                             const SizedBox(height: 16),
                             Container(
-                              height: 140,
+                              height: 120,
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: Colors.white,
@@ -103,6 +91,61 @@ class HomePage extends GetView<HomeController> {
                                 borderRadius: const BorderRadius.all(
                                   Radius.circular(12.0),
                                 ),
+                              ),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 100,
+                                    height: double.infinity,
+                                    alignment: Alignment.topCenter,
+                                    padding: const EdgeInsets.all(14),
+                                    child: CircleAvatar(
+                                      radius: 24,
+                                      backgroundColor: Colors.green[50],
+                                      child: const Icon(
+                                        Icons.card_giftcard,
+                                        size: 32,
+                                        color: Colors.green,
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Container(
+                                      height: double.infinity,
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 18),
+                                      child: const Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "Win GrabGifts Food!",
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                          SizedBox(height: 12),
+                                          Text(
+                                            "Ends on 31 May 2023",
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 12,
+                                                color: Colors.grey),
+                                          ),
+                                          SizedBox(height: 12),
+                                          Text(
+                                            "Accept this Challenge",
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 12,
+                                                color: Colors.blue),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ],

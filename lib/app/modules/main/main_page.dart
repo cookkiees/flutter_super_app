@@ -86,7 +86,7 @@ class MainPage extends GetView<MainController> {
           child: Theme(
             data: ThemeData(splashColor: Colors.transparent),
             child: Visibility(
-              visible: controller.isBottomNavBarVisible.value,
+              visible: controller.isScrollVisible.value,
               child: BottomNavigationBar(
                 currentIndex: controller.pageIndex.value,
                 onTap: controller.onTabSelected,

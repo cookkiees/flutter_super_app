@@ -16,7 +16,7 @@ class MainController extends GetxController {
     });
   }
 
-  RxBool isBottomNavBarVisible = true.obs;
+  RxBool isScrollVisible = true.obs;
 
   ScrollController scroll = ScrollController();
 
@@ -33,9 +33,9 @@ class MainController extends GetxController {
 
   void onScroll(double scrollPosition, double maxScrollExtent) {
     if (scrollPosition >= maxScrollExtent) {
-      isBottomNavBarVisible.value = false;
+      isScrollVisible.value = false;
     } else {
-      isBottomNavBarVisible.value = true;
+      isScrollVisible.value = true;
     }
   }
 }
