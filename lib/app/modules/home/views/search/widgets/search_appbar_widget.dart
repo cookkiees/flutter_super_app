@@ -60,7 +60,7 @@ class SearchAppBarWidget extends StatelessWidget {
                 filled: true,
                 isDense: true,
                 fillColor: Colors.grey[100],
-                hintText: 'Search the ${MyStrings.title} app',
+                hintText: 'Search the ${MyStrings.appName} app',
                 hintStyle: const TextStyle(color: Colors.grey),
                 prefixIconColor: MyColors.grey,
                 prefixIcon: const Icon(Icons.search, size: 24),

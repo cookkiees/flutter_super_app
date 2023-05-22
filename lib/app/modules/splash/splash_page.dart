@@ -24,7 +24,7 @@ class SplashPage extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              MyStrings.title,
+              MyStrings.appName,
               style: GoogleFonts.zenTokyoZoo(
                 color: MyColors.white,
                 fontSize: 100,

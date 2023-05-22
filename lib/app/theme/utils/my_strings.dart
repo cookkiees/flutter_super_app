@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyStrings {
-  static const title = 'kokoko';
+  static const appName = 'kokoko';
 
   static RichText privacyAndPolicy = RichText(
     text: const TextSpan(

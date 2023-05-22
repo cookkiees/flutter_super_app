@@ -37,7 +37,7 @@ class AuthenticationPage extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    MyStrings.title,
+                    MyStrings.appName,
                     style: GoogleFonts.zenTokyoZoo(
                         color: MyColors.white, fontSize: 90),
                   ),
