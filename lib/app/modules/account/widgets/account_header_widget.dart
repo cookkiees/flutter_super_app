@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../components/icon_subscription_global_widget.dart';
 import '../../../theme/utils/my_colors.dart';
