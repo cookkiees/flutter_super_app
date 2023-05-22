@@ -16,9 +16,9 @@ class HomeGiftBoxWidget extends StatelessWidget {
       child: Container(
         height: 150,
         width: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.blue[50],
-          borderRadius: const BorderRadius.all(Radius.circular(12.0)),
+        decoration: const BoxDecoration(
+          color: Color.fromARGB(118, 227, 242, 253),
+          borderRadius: BorderRadius.all(Radius.circular(12.0)),
         ),
         child: Row(
           children: [

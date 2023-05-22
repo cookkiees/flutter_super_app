@@ -69,7 +69,7 @@ class GrabUnlimitedListWidget extends StatelessWidget {
                       children: [
                         Text(
                           title,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.w400,
                           ),
                         ),
