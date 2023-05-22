@@ -1,3 +1,4 @@
+import 'package:flutter_super_app_1/app/modules/home/views/transport/transport_page.dart';
 import 'package:get/get.dart';
 //  Import local
 import '../modules/account/account_page.dart';
@@ -69,6 +70,11 @@ abstract class AppPages {
     GetPage(
       name: AppRoutes.delivery,
       page: () => const DeliveryPage(),
+      binding: HomeBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.transport,
+      page: () => const TransportPage(),
       binding: HomeBinding(),
     ),
     GetPage(

@@ -33,7 +33,9 @@ class HomeMenuItemWidget extends GetView<HomeController> {
                       onTap: () {
                         (index == 0 || index == 1)
                             ? Get.toNamed(AppRoutes.delivery)
-                            : null;
+                            : (index == 2 || index == 3)
+                                ? Get.toNamed(AppRoutes.transport)
+                                : null;
                       },
                       child: Stack(
                         children: [
